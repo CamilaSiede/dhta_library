@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our books</title>
+    <link rel="stylesheet" href="{% static 'catalog.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+<body>
+    <header class="header">
+        <img src="" alt="">
+        <h2 class="header-title">Do you want to leave us a comment? Create an account!</h2>
+        <nav>
+            <a href="{% url 'registration' %}" class= "nav-link">REGISTER</a>
+            <a href="" class= "nav-link">LOG IN</a>
+        </nav>
+            {% if messages %}
+            <div class="pop-up-account">
+                {% for message in messages %}
+                    {{ message }}
+            </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="main">
+        {% for book in books %}
+        <div class="book-card">
+            <div class="card-img">
+                <img src="{{ book.image.url }}" alt="">
+            </div>
+            <div class="card-text">
+                <h3>Title: {{ book.title }}</h3>
+                <h3>Author: {{ book.author }}</h3>
+            </div>
+            <div class="card-link">
+                <a href="{% url 'book_detail' book.id %}">SEE MORE</a>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

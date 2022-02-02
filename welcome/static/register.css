@@ -1,0 +1,37 @@
+body{
+    background-color: #d61f26;
+    font-family: 'Bebas Neue', cursive;
+}
+
+main{
+    margin-left: 290px;
+    margin-top: 30px;
+}
+
+.form-container{
+    background-color: #ffff;
+    display: inline-block;
+    width: 700px;
+    height: 350px;
+    padding-left: 57px;
+    padding-top: 30px;
+    border-radius: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    letter-spacing: 1px;
+
+}
+
+.form-btn{
+    width: 50px ;
+    height: 30px ;
+}
+
+.errorlist li{
+    color: rgb(39, 135, 103);
+    font-size: 25px;
+    list-style: none;
+}
+
+.errorlist li:before{
+    content: "Sorry, ";
+}

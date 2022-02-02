@@ -1,0 +1,27 @@
+body{
+    background-color: #d61f26;
+}
+
+.card-title{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.card-detail{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffff;
+    padding: 30px;
+}
+
+div{
+    margin: 20px;
+}
+
+.card-detail-btn{
+    background-color: rgb(155, 154, 157);
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+}

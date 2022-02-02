@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book_title }}</title>
+    <link rel="stylesheet" href="{% static 'book_detail.css' %}">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <article>
+            <h2 class="card-title">{{ book_detail.title }}</h2>
+            <section class="card-detail">
+                {{ book_detail.description }}
+            </section>
+        </article>
+        <div>
+            <a href="{% url 'catalog' %}" class="card-detail-btn">BACK TO CATALOG</a>
+        </div>
+
+    </main>
+</body>
+</html>

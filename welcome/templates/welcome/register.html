@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                <div>
+                    <button type = "submit" class="form-btn">Send</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <small>Do you have already an account? <a href="#">Log In</a></small>
+        </div>
+    </main>
+</body>
+</html>
