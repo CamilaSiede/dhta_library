@@ -33,6 +33,8 @@ def registration(request):
 
 #API VIEWS 
 
+#API VIEWS 
+
 @api_view(['GET','POST'])
 def api_book_list(request):
 
@@ -49,22 +51,22 @@ def api_book_list(request):
         return Response(desserializer.errors, status=status.HTTP_400_BAD_REQUEST) 
 
 @api_view(['GET','PUT','DELETE'])
-def api_student_detail(request, pk):
-    try:                                        # In the try/except block we are checking if the student with that ID exists.
-        student = Books.objects.get(pk=pk)
+def api_book_detail(request, pk):
+    try:                                       
+        books = Books.objects.get(pk=pk)
     except Books.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = BookSerializer(student)
+        serializer = BookSerializer(books)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = BookSerializer(student, data=request.data)
+        serializer = BookSerializer(books, data=request.data)
         if serializer.is_valid():
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        student.delete()
+        books.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
