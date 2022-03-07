@@ -25,5 +25,7 @@ urlpatterns = [
     path('catalog/', views.catalog, name= 'catalog'),
     path('book_detail/<int:id>', views.book_detail, name = 'book_detail'),
     path('register/', views.registration, name = 'registration'),
+    path('api/',views.api_book_list),
+    path('api/<int:pk>/', views.api_book_detail),
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
